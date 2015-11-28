@@ -1,0 +1,9 @@
+%h1 Listing people
+
+= table_for(@people, border: 1) do |t|
+  - t.span 'names' do |s|
+    - s.column :name
+    - s.column :surname
+  - t.column :weight, header_rowspan: 2
+  - t.column :actions, header_rowspan: 2 do |person|
+    = link_to 'Show', person
